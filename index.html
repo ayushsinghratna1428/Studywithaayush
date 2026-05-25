@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STUDYWITHAAYUSH</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial;
+    }
+
+    body{
+      background:black;
+      color:white;
+    }
+
+    .hero{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      background:linear-gradient(to bottom,#0f172a,black);
+    }
+
+    .hero h1{
+      font-size:55px;
+      margin-bottom:20px;
+      color:#3b82f6;
+    }
+
+    .hero p{
+      font-size:20px;
+      color:#cbd5e1;
+      max-width:700px;
+    }
+
+    .btn{
+      margin-top:30px;
+    }
+
+    .btn a{
+      text-decoration:none;
+      background:#3b82f6;
+      padding:14px 30px;
+      color:white;
+      border-radius:12px;
+      margin:10px;
+      display:inline-block;
+      font-weight:bold;
+    }
+
+    .courses{
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    .courses h2{
+      font-size:40px;
+      margin-bottom:40px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:#111827;
+      padding:30px;
+      border-radius:20px;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#60a5fa;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      color:gray;
+      border-top:1px solid #222;
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <h1>STUDYWITHAAYUSH</h1>
+
+    <p>
+      Free Notes, PDFs, PYQs, Online Classes & Study Materials
+    </p>
+
+    <div class="btn">
+      <a href="#">Explore</a>
+      <a href="https://t.me">Telegram</a>
+    </div>
+  </section>
+
+  <section class="courses">
+    <h2>Popular Subjects</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Mathematics</h3>
+        <p>Complete notes and practice questions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Science</h3>
+        <p>Best handwritten notes and videos.</p>
+      </div>
+
+      <div class="card">
+        <h3>Biology</h3>
+        <p>Diagrams, NCERT solutions & tests.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    © 2026 STUDYWITHAAYUSH
+  </footer>
+
+</body>
+</html>
