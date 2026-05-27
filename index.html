@@ -1,256 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Study With Aayush</title>
+<title>STUDY WITH AAYUSH</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-  overflow:hidden;
-  background:linear-gradient(135deg,#ff4fd8,#ff8ce6,#ffd6f5);
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
+height:100vh;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+
+background:
+radial-gradient(circle at top,#220033,#05010d 70%);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
 }
 
-/* WINTER EFFECT */
+/* Animated Grid Background */
 
-.snow{
-  position:absolute;
-  width:6px;
-  height:6px;
-  background:white;
-  border-radius:50%;
-  top:-10px;
-  opacity:0.8;
-  animation:fall linear infinite;
+.grid{
+position:absolute;
+width:200%;
+height:200%;
+
+background-image:
+linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+
+background-size:60px 60px;
+
+animation:gridMove 15s linear infinite;
+
+transform:rotate(8deg);
+
+opacity:0.25;
 }
 
-@keyframes fall{
-  0%{
-    transform:translateY(-10px);
-    opacity:0;
-  }
-  100%{
-    transform:translateY(110vh);
-    opacity:1;
-  }
+@keyframes gridMove{
+0%{
+transform:translate(0,0) rotate(8deg);
+}
+100%{
+transform:translate(-250px,-250px) rotate(8deg);
+}
 }
 
-/* FLOWERS */
+/* Aura */
 
-.flower{
-  position:absolute;
-  top:-50px;
-  font-size:24px;
-  animation:flowerFall linear infinite;
-  opacity:0.9;
+.aura1,.aura2,.aura3{
+position:absolute;
+border-radius:50%;
+filter:blur(90px);
+opacity:0.5;
+animation:pulse 5s infinite alternate;
 }
 
-@keyframes flowerFall{
-  0%{
-    transform:translateY(-50px) rotate(0deg);
-  }
-  100%{
-    transform:translateY(110vh) rotate(360deg);
-  }
+.aura1{
+width:350px;
+height:350px;
+background:#ff00ff;
+top:0;
+left:0;
 }
 
-/* MAIN CARD */
-
-.container{
-  width:90%;
-  max-width:900px;
-  padding:40px;
-  border-radius:30px;
-
-  background:rgba(255,255,255,0.12);
-
-  backdrop-filter:blur(20px);
-
-  border:1px solid rgba(255,255,255,0.3);
-
-  box-shadow:
-  0 0 40px rgba(255,0,200,0.4),
-  0 0 80px rgba(255,255,255,0.2);
-
-  text-align:center;
-
-  animation:glow 3s infinite alternate;
-
-  z-index:2;
+.aura2{
+width:350px;
+height:350px;
+background:#00ffff;
+bottom:0;
+right:0;
+animation-delay:2s;
 }
 
-@keyframes glow{
-  from{
-    box-shadow:0 0 30px #ff4fd8;
-  }
-  to{
-    box-shadow:0 0 70px #ffffff;
-  }
-}
-
-.logo{
-  font-size:55px;
-  margin-bottom:10px;
-}
-
-h1{
-  color:white;
-  font-size:55px;
-  font-weight:700;
-  text-shadow:0 0 20px white;
-}
-
-p{
-  margin-top:15px;
-  color:white;
-  font-size:18px;
-}
-
-/* BUTTONS */
-
-.buttons{
-  margin-top:40px;
-  display:flex;
-  gap:20px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:15px 35px;
-  border:none;
-  border-radius:50px;
-  font-size:18px;
-  font-weight:600;
-  cursor:pointer;
-
-  transition:0.4s;
-
-  background:white;
-  color:#ff1493;
-
-  box-shadow:0 0 20px rgba(255,255,255,0.5);
-}
-
-.btn:hover{
-  transform:scale(1.12);
-  background:#ff1493;
-  color:white;
-  box-shadow:0 0 30px #ff1493;
-}
-
-/* AURA EFFECT */
-
-.aura{
-  position:absolute;
-  width:700px;
-  height:700px;
-  background:radial-gradient(circle,
-  rgba(255,255,255,0.4),
-  rgba(255,0,200,0.1),
-  transparent);
-
-  border-radius:50%;
-  filter:blur(40px);
-
-  animation:pulse 5s infinite;
+.aura3{
+width:280px;
+height:280px;
+background:#7c4dff;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+animation-delay:1s;
 }
 
 @keyframes pulse{
-  0%{
-    transform:scale(1);
-  }
-  50%{
-    transform:scale(1.1);
-  }
-  100%{
-    transform:scale(1);
-  }
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.25);
+}
+}
+
+/* Snow */
+
+.snow{
+position:absolute;
+width:5px;
+height:5px;
+background:white;
+border-radius:50%;
+opacity:0.8;
+animation:snow linear infinite;
+}
+
+@keyframes snow{
+0%{
+transform:translateY(-10vh);
+opacity:0;
+}
+100%{
+transform:translateY(110vh);
+opacity:1;
+}
+}
+
+/* Main Box */
+
+.container{
+
+position:relative;
+z-index:5;
+
+width:92%;
+max-width:1100px;
+
+padding:55px 35px;
+
+border-radius:35px;
+
+background:rgba(255,255,255,0.06);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,0.12);
+
+box-shadow:
+0 0 40px rgba(255,0,255,0.35),
+0 0 90px rgba(0,255,255,0.15);
+
+text-align:center;
+
+overflow:hidden;
+}
+
+/* Neon Border */
+
+.container::before{
+content:'';
+
+position:absolute;
+inset:-2px;
+
+border-radius:35px;
+
+padding:2px;
+
+background:linear-gradient(
+90deg,
+#ff00ff,
+#00ffff,
+#7c4dff,
+#ff00ff
+);
+
+background-size:300% 300%;
+
+animation:borderGlow 5s linear infinite;
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+}
+
+@keyframes borderGlow{
+0%{
+background-position:0% 50%;
+}
+100%{
+background-position:300% 50%;
+}
+}
+
+/* Logo */
+
+.logo{
+font-size:75px;
+margin-bottom:15px;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+}
+
+/* Heading */
+
+h1{
+font-family:'Orbitron',sans-serif;
+
+font-size:55px;
+
+background:linear-gradient(
+90deg,
+#ffffff,
+#ff77ff,
+#00ffff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:15px;
+}
+
+/* Text */
+
+p{
+color:#ddd;
+font-size:18px;
+margin-bottom:45px;
+line-height:1.7;
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+/* Individual Card */
+
+.card{
+
+padding:30px 20px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,0.08);
+
+border:1px solid rgba(255,255,255,0.12);
+
+backdrop-filter:blur(10px);
+
+transition:0.4s;
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+}
+
+.card:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+box-shadow:
+0 0 30px #ff00ff,
+0 0 60px #00ffff;
+}
+
+/* Glow Circle */
+
+.card::before{
+content:'';
+
+position:absolute;
+
+width:180px;
+height:180px;
+
+background:radial-gradient(circle,
+rgba(255,255,255,0.2),
+transparent 70%);
+
+top:-70px;
+right:-70px;
+
+border-radius:50%;
+}
+
+/* Card Image */
+
+.card img{
+width:90px;
+height:90px;
+object-fit:contain;
+
+margin-bottom:15px;
+
+filter:drop-shadow(0 0 15px rgba(255,255,255,0.5));
+}
+
+/* Card Title */
+
+.card h2{
+color:white;
+font-size:24px;
+margin-bottom:10px;
+}
+
+/* Worth */
+
+.card span{
+display:inline-block;
+
+margin-top:10px;
+
+padding:8px 18px;
+
+border-radius:40px;
+
+background:linear-gradient(
+90deg,
+#ff00ff,
+#00ffff
+);
+
+color:white;
+
+font-size:14px;
+font-weight:600;
+}
+
+/* Mobile */
+
+@media(max-width:700px){
+
+h1{
+font-size:38px;
+}
+
+.logo{
+font-size:58px;
+}
+
+.container{
+padding:35px 18px;
+}
+
 }
 
 </style>
 </head>
 <body>
 
-<div class="aura"></div>
+<div class="grid"></div>
 
-<!-- SNOW -->
-<script>
-for(let i=0;i<100;i++){
+<div class="aura1"></div>
+<div class="aura2"></div>
+<div class="aura3"></div>
 
-  let snow=document.createElement('div');
-  snow.classList.add('snow');
+<!-- Snow -->
 
-  snow.style.left=Math.random()*100+"vw";
-  snow.style.animationDuration=(Math.random()*5+5)+"s";
-  snow.style.opacity=Math.random();
-
-  document.body.appendChild(snow);
-}
-</script>
-
-<!-- FLOWERS -->
 <script>
 
-let flowers=["🌸","🌺","💮","🌷"];
+for(let i=0;i<120;i++){
 
-for(let i=0;i<40;i++){
+let snow=document.createElement('div');
 
-  let flower=document.createElement('div');
+snow.classList.add('snow');
 
-  flower.classList.add('flower');
+snow.style.left=Math.random()*100+'vw';
 
-  flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+snow.style.animationDuration=
+(Math.random()*7+5)+'s';
 
-  flower.style.left=Math.random()*100+"vw";
+snow.style.opacity=Math.random();
 
-  flower.style.animationDuration=(Math.random()*8+6)+"s";
+document.body.appendChild(snow);
 
-  flower.style.fontSize=(Math.random()*20+20)+"px";
-
-  document.body.appendChild(flower);
 }
 
 </script>
 
-<!-- MAIN UI -->
+<!-- MAIN -->
 
 <div class="container">
 
-<div class="logo">🥶🌸</div>
+<div class="logo">🥶⚡</div>
 
 <h1>STUDY WITH AAYUSH</h1>
 
 <p>
-Pink Winter Aura UI ✨ <br>
-The Ultimate Study Experience
+Ultimate Anime Aura Experience ✨ <br>
+Premium Educational Collection
 </p>
 
-<div class="buttons">
+<div class="cards">
 
-<button class="btn">NEET Batches</button>
+<!-- PW -->
 
-<button class="btn">JEE Batches</button>
+<div class="card">
 
-<button class="btn">Notes</button>
+<img src="assets/images/pw.png">
 
-<button class="btn">PYQ</button>
+<h2>PW</h2>
+
+<span>Worth ₹9999+</span>
+
+</div>
+
+<!-- NEXT TOPPER -->
+
+<div class="card">
+
+<img src="assets/images/nexttopper.png">
+
+<h2>NEXT TOPPER</h2>
+
+<span>Worth ₹7999+</span>
+
+</div>
+
+<!-- VIBRANT -->
+
+<div class="card">
+
+<img src="assets/images/vibrant.png">
+
+<h2>VIBRANT</h2>
+
+<span>Worth ₹8999+</span>
+
+</div>
+
+<!-- MISSION JEET -->
+
+<div class="card">
+
+<img src="assets/images/missionjeet.png">
+
+<h2>MISSION JEET</h2>
+
+<span>Worth ₹6999+</span>
+
+</div>
 
 </div>
 
