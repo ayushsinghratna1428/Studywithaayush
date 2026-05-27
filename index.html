@@ -1,150 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Study Hub</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Study With Aayush</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body{
+
+*{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background:#0f172a;
-  color:white;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
 }
 
-/* HEADER */
-header{
-  padding:25px;
-  text-align:center;
-  font-size:24px;
-  font-weight:bold;
-  background:linear-gradient(90deg,#6366f1,#a855f7);
-}
-
-/* GRID */
-.container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:15px;
-  padding:20px;
-}
-
-/* GLASS CARD */
-.card{
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,0.1);
-  border-radius:16px;
+body{
   overflow:hidden;
-  transition:0.3s;
+  background:linear-gradient(135deg,#ff4fd8,#ff8ce6,#ffd6f5);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
 }
-<body>
-<img src="assets/images/pw.png">
-<img src="assets/images/nexttopper.png">
-<img src="assets/images/vibrant.png">
-<img src="assets/images/missionjeet.png">
-  <header>
-    <h1>Study Website</h1>
-  </header>
 
-  <!-- 👇 YAHAN PASTE KARO -->
-  <div class="launcher-container">
+/* WINTER EFFECT */
 
-    <div class="card" onclick="window.open('https://pw.live', '_blank')">
-      <img src="assets/images/pw.png" alt="PW">
-      <h3>Physics Wallah</h3>
-    </div>
+.snow{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:white;
+  border-radius:50%;
+  top:-10px;
+  opacity:0.8;
+  animation:fall linear infinite;
+}
 
-    <div class="card" onclick="window.open('https://www.nexttoppers.com', '_blank')">
-      <img src="assets/images/nexttopper.png" alt="Next Topper">
-      <h3>Next Topper</h3>
-    </div>
+@keyframes fall{
+  0%{
+    transform:translateY(-10px);
+    opacity:0;
+  }
+  100%{
+    transform:translateY(110vh);
+    opacity:1;
+  }
+}
 
-    <div class="card" onclick="window.open('https://www.vibrantacademy.com', '_blank')">
-      <img src="assets/images/vibrant.png" alt="Vibrant">
-      <h3>Vibrant Academy</h3>
-    </div>
+/* FLOWERS */
 
-    <div class="card" onclick="window.open('https://missionjeet.com', '_blank')">
-      <img src="assets/images/missionjeet.png" alt="Mission Jeet">
-      <h3>Mission Jeet</h3>
-    </div>
+.flower{
+  position:absolute;
+  top:-50px;
+  font-size:24px;
+  animation:flowerFall linear infinite;
+  opacity:0.9;
+}
 
-  </div>
+@keyframes flowerFall{
+  0%{
+    transform:translateY(-50px) rotate(0deg);
+  }
+  100%{
+    transform:translateY(110vh) rotate(360deg);
+  }
+}
 
-</body>
-.card:hover{
-  transform:translateY(-6px);
+/* MAIN CARD */
+
+.container{
+  width:90%;
+  max-width:900px;
+  padding:40px;
+  border-radius:30px;
+
   background:rgba(255,255,255,0.12);
-}
 
-.card img{
-  width:100%;
-  height:120px;
-  object-fit:cover;
-}
+  backdrop-filter:blur(20px);
 
-.card h3{
+  border:1px solid rgba(255,255,255,0.3);
+
+  box-shadow:
+  0 0 40px rgba(255,0,200,0.4),
+  0 0 80px rgba(255,255,255,0.2);
+
   text-align:center;
-  margin:10px 0;
+
+  animation:glow 3s infinite alternate;
+
+  z-index:2;
+}
+
+@keyframes glow{
+  from{
+    box-shadow:0 0 30px #ff4fd8;
+  }
+  to{
+    box-shadow:0 0 70px #ffffff;
+  }
+}
+
+.logo{
+  font-size:55px;
+  margin-bottom:10px;
+}
+
+h1{
+  color:white;
+  font-size:55px;
+  font-weight:700;
+  text-shadow:0 0 20px white;
+}
+
+p{
+  margin-top:15px;
+  color:white;
+  font-size:18px;
+}
+
+/* BUTTONS */
+
+.buttons{
+  margin-top:40px;
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
 .btn{
-  display:block;
-  text-align:center;
-  margin:10px;
-  padding:8px;
-  background:linear-gradient(90deg,#6366f1,#a855f7);
-  color:white;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:bold;
+  padding:15px 35px;
+  border:none;
+  border-radius:50px;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+
+  transition:0.4s;
+
+  background:white;
+  color:#ff1493;
+
+  box-shadow:0 0 20px rgba(255,255,255,0.5);
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  color:#94a3b8;
-  font-size:12px;
+.btn:hover{
+  transform:scale(1.12);
+  background:#ff1493;
+  color:white;
+  box-shadow:0 0 30px #ff1493;
+}
+
+/* AURA EFFECT */
+
+.aura{
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:radial-gradient(circle,
+  rgba(255,255,255,0.4),
+  rgba(255,0,200,0.1),
+  transparent);
+
+  border-radius:50%;
+  filter:blur(40px);
+
+  animation:pulse 5s infinite;
+}
+
+@keyframes pulse{
+  0%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.1);
+  }
+  100%{
+    transform:scale(1);
+  }
 }
 
 </style>
 </head>
-
 <body>
 
-<header>📚 Study Hub 2026 - Modern Learning Platform</header>
+<div class="aura"></div>
+
+<!-- SNOW -->
+<script>
+for(let i=0;i<100;i++){
+
+  let snow=document.createElement('div');
+  snow.classList.add('snow');
+
+  snow.style.left=Math.random()*100+"vw";
+  snow.style.animationDuration=(Math.random()*5+5)+"s";
+  snow.style.opacity=Math.random();
+
+  document.body.appendChild(snow);
+}
+</script>
+
+<!-- FLOWERS -->
+<script>
+
+let flowers=["🌸","🌺","💮","🌷"];
+
+for(let i=0;i<40;i++){
+
+  let flower=document.createElement('div');
+
+  flower.classList.add('flower');
+
+  flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+
+  flower.style.left=Math.random()*100+"vw";
+
+  flower.style.animationDuration=(Math.random()*8+6)+"s";
+
+  flower.style.fontSize=(Math.random()*20+20)+"px";
+
+  document.body.appendChild(flower);
+}
+
+</script>
+
+<!-- MAIN UI -->
 
 <div class="container">
 
-  <div class="card">
-    <img src="images/pw.jpg">
-    <h3>🔥 Physics Wallah</h3>
-    <a class="btn" href="pw.html">Explore</a>
-  </div>
+<div class="logo">🥶🌸</div>
 
-  <div class="card">
-    <img src="images/nexttopper.jpg">
-    <h3>🚀 NextTopper</h3>
-    <a class="btn" href="nexttopper.html">Explore</a>
-  </div>
+<h1>STUDY WITH AAYUSH</h1>
 
-  <div class="card">
-    <img src="images/vibrant.jpg">
-    <h3>🏆 Vibrant Academy</h3>
-    <a class="btn" href="vibrant.html">Explore</a>
-  </div>
+<p>
+Pink Winter Aura UI ✨ <br>
+The Ultimate Study Experience
+</p>
 
-  <div class="card">
-    <img src="images/mission.jpg">
-    <h3>🎯 Mission Jeet</h3>
-    <a class="btn" href="mission.html">Explore</a>
-  </div>
+<div class="buttons">
+
+<button class="btn">NEET Batches</button>
+
+<button class="btn">JEE Batches</button>
+
+<button class="btn">Notes</button>
+
+<button class="btn">PYQ</button>
 
 </div>
 
-<footer>Made for Students ❤️ | Study Hub</footer>
+</div>
 
 </body>
 </html>
